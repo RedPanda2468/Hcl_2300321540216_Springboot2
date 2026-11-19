@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TaskServiceTest {
-    private final TaskService service = new TaskService(new InMemoryTaskRepository());
+    private final TaskService service = new TaskService(new InMemoryTaskRepository(), new com.example.hcltechtest.validation.TaskValidator());
 
     @Test
     void createsAndFindsTask() {
