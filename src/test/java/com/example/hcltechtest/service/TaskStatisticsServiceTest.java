@@ -11,7 +11,7 @@ class TaskStatisticsServiceTest {
     @Test
     void countsTasksByStatus() {
         var repository = new InMemoryTaskRepository();
-        var tasks = new TaskService(repository);
+        var tasks = new TaskService(repository, new com.example.hcltechtest.validation.TaskValidator());
         tasks.create(new TaskRequest("One", "", TaskStatus.TODO));
         tasks.create(new TaskRequest("Two", "", TaskStatus.DONE));
         tasks.create(new TaskRequest("Three", "", TaskStatus.IN_PROGRESS));
